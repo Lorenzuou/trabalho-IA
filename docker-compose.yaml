@@ -1,0 +1,9 @@
+version: '3'
+services:
+  data-science:
+    image: ubuntu:20.04
+    container_name: data-science
+    volumes:
+      - ./:/home/trabalho
+    working_dir: /home/trabalho
+    command: bash -c "apt-get update && apt-get install -y python3 python3-pip && pip3 install -r requirements.txt && tail -f /dev/null"
