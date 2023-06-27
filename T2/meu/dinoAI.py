@@ -4,7 +4,7 @@ import random
 import time
 from sys import exit
 
-from tree import KeyClassifier
+from tree import KeyTreeClassifier
 
 pygame.init()
 
@@ -403,7 +403,7 @@ def gradient_ascent(state, max_time):
         neighborhood = generate_neighborhood(state)
         better = False
         for s in neighborhood:
-            aiPlayer = KeySimplestClassifier(s)
+            aiPlayer = KeyTreeClassifier(s)
             res, value = manyPlaysResults(3)
             if value > max_value:
                 state = s
@@ -429,10 +429,10 @@ def main():
     global aiPlayer
     print("Start")
     initial_state = [(15, 250), (18, 350), (20, 450), (1000, 550)]
-    aiPlayer = KeyClassifier(initial_state)
+    aiPlayer = KeyTreeClassifier(initial_state)
     print(aiPlayer)
     best_state, best_value = gradient_ascent(initial_state, 5000)
-    aiPlayer = KeyClassifier(best_state)
+    aiPlayer = KeyTreeClassifier(best_state)
     res, value = manyPlaysResults(30)
     npRes = np.asarray(res)
     print(res, npRes.mean(), npRes.std(), value)

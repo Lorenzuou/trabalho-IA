@@ -2,7 +2,9 @@ import pygame
 import os
 import random
 import time
+import numpy as np
 from sys import exit
+import tree as tree
 
 pygame.init()
 
@@ -221,6 +223,14 @@ class KeyClassifier:
 def first(x):
     return x[0]
 
+def enumerate_obstacle(ob): 
+    if isinstance(ob, SmallCactus):
+        return 0
+    elif isinstance(ob, LargeCactus):
+        return 1
+    elif isinstance(ob, Bird):
+        return 2
+    return -1
 
 class KeySimplestClassifier(KeyClassifier):
     def __init__(self, state):
@@ -254,6 +264,8 @@ def playerKeySelector():
         return "K_NO"
 
 
+
+
 def playGame(solutions):
     global game_speed, x_pos_bg, y_pos_bg, points, obstacles
     run = True
@@ -278,7 +290,7 @@ def playGame(solutions):
 
     for solution in solutions:
         players.append(Dinosaur())
-        players_classifier.append(KeySimplestClassifier(solution))
+        players_classifier.append(tree.KeyTreeClassifier(solution))
         solution_fitness.append(0)
         died.append(False)
 
@@ -341,7 +353,7 @@ def playGame(solutions):
                     nextObHeight = obstacles[1].getHeight()
                     nextObType = obstacles[1]
 
-                userInput = players_classifier[i].keySelector(distance, obHeight, game_speed, obType, nextObDistance, nextObHeight,nextObType)
+                userInput = players_classifier[i].keySelector(distance, obHeight, game_speed, enumerate_obstacle(obType), nextObDistance, nextObHeight,nextObType)
 
                 player.update(userInput)
 
@@ -411,37 +423,32 @@ def generate_neighborhood(state):
     return neighborhood
 
 
-# Gradiente Ascent
-def gradient_ascent(state, max_time):
-    start = time.process_time()
-    res, max_value = manyPlaysResultsTest(3, state)
-    better = True
-    end = 0
-    while better and end - start <= max_time:
-        neighborhood = generate_neighborhood(state)
-        better = False
 
-        results = playGame(neighborhood)
-        for i,value in enumerate(results):
-            if value > max_value:
-                state = neighborhood[i]
-                max_value = value
-                better = True
-        '''
-        for s in neighborhood:
-            aiPlayer = KeySimplestClassifier(s)
-            res, value = manyPlaysResults(3)
-            if value > max_value:
-                state = s
-                max_value = value
-                better = True
-        '''
-        end = time.process_time()
-    return state, max_value
+def PSOTree(rounds, particles):
 
 
-from scipy import stats
-import numpy as np
+    global global_best
+    global_best = particles[0].position[:]
+    best_result = 0
+
+    results = manyPlaysResultsTrain(rounds, particles)
+
+    for particle, fitness in zip(particles, results):
+        
+        if fitness > particle.best_fitness:
+            particle.best_fitness = fitness
+            particle.best_position = particle.position[:]
+
+        if fitness >= playGame(global_best)[0]:
+            global_best = particle.position[:]
+            best_result = fitness
+
+        tree.update_position(particle,global_best)
+
+
+    return global_best, best_result
+
+
 
 def manyPlaysResultsTrain(rounds,solutions):
     results = []
@@ -466,11 +473,13 @@ def manyPlaysResultsTest(rounds,best_solution):
 
 def main():
 
-    initial_state = [(15, 250), (18, 350), (20, 450), (1000, 550)]
-    best_state, best_value = gradient_ascent(initial_state, 5000)
-    res, value = manyPlaysResultsTest(30, best_state)
-    npRes = np.asarray(res)
-    print(res, npRes.mean(), npRes.std(), value)
+    initial_state = [tree.Particle(), tree.Particle(), tree.Particle(), tree.Particle()]
+    best_state, best_value = PSOTree(1,initial_state)
+
+    print(best_value)
+    # res, value = manyPlaysResultsTest(30, best_state)
+    # npRes = np.asarray(res)
+    # print(res, npRes.mean(), npRes.std(), value)
 
 
 main()
