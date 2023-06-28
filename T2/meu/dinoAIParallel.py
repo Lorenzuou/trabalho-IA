@@ -11,6 +11,7 @@ pygame.init()
 # Valid values: HUMAN_MODE or AI_MODE
 GAME_MODE = "AI_MODE"
 RENDER_GAME = True
+RENDER_GAME = False
 
 # Global Constants
 SCREEN_HEIGHT = 600
@@ -356,7 +357,6 @@ def playGame(solutions):
                 userInput = players_classifier[i].keySelector(distance, obHeight, game_speed, enumerate_obstacle(obType), nextObDistance, nextObHeight,nextObType)
 
                 player.update(userInput)
-
                 if RENDER_GAME:
                     player.draw(SCREEN)
 
@@ -428,22 +428,24 @@ def PSOTree(rounds, particles):
 
 
     global global_best
-    global_best = particles[0].position[:]
+    global_best = particles[0]
     best_result = 0
 
-    results = manyPlaysResultsTrain(rounds, particles)
+    for _ in range(rounds) :
+        results = manyPlaysResultsTrain(5, particles)
 
-    for particle, fitness in zip(particles, results):
-        
-        if fitness > particle.best_fitness:
-            particle.best_fitness = fitness
-            particle.best_position = particle.position[:]
-
-        if fitness >= playGame(global_best)[0]:
-            global_best = particle.position[:]
-            best_result = fitness
-
-        tree.update_position(particle,global_best)
+        for particle, fitness in zip(particles, results):
+            
+            if fitness > particle.best_fitness:
+                particle.best_fitness = fitness
+                particle.best_position = particle.position[:]
+               
+                global_best = particle
+                best_result = fitness
+                print("best: ", best_result)
+                print("best postion: ", particle.position)
+               
+            tree.update_position(particle,global_best)
 
 
     return global_best, best_result
@@ -452,29 +454,29 @@ def PSOTree(rounds, particles):
 
 def manyPlaysResultsTrain(rounds,solutions):
     results = []
-
     for round in range(rounds):
         results += [playGame(solutions)]
+
 
     npResults = np.asarray(results)
 
     mean_results = np.mean(npResults,axis = 0) - np.std(npResults,axis=0) # axis 0 calcula media da coluna
     return mean_results
+    return 0
 
 
 def manyPlaysResultsTest(rounds,best_solution):
     results = []
     for round in range(rounds):
         results += [playGame([best_solution])[0]]
-
     npResults = np.asarray(results)
     return (results, npResults.mean() - npResults.std())
 
 
 def main():
 
-    initial_state = [tree.Particle(), tree.Particle(), tree.Particle(), tree.Particle()]
-    best_state, best_value = PSOTree(1,initial_state)
+    initial_state = [tree.Particle() for _ in range(40)]
+    best_state, best_value = PSOTree(100,initial_state)
 
     print(best_value)
     # res, value = manyPlaysResultsTest(30, best_state)

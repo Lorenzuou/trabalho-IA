@@ -430,12 +430,12 @@ def main():
     print("Start")
     initial_state = [(15, 250), (18, 350), (20, 450), (1000, 550)]
     aiPlayer = KeyTreeClassifier(initial_state)
-    print(aiPlayer)
-    best_state, best_value = gradient_ascent(initial_state, 5000)
-    aiPlayer = KeyTreeClassifier(best_state)
-    res, value = manyPlaysResults(30)
-    npRes = np.asarray(res)
-    print(res, npRes.mean(), npRes.std(), value)
+    # print(aiPlayer)
+    # best_state, best_value = gradient_ascent(initial_state, 5000)
+    # aiPlayer = KeyTreeClassifier(best_state)
+    # res, value = manyPlaysResults(30)
+    # npRes = np.asarray(res)
+    # print(res, npRes.mean(), npRes.std(), value)
 
 
 main()
