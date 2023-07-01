@@ -10,7 +10,7 @@ pygame.init()
 
 # Valid values: HUMAN_MODE or AI_MODE
 GAME_MODE = "AI_MODE"
-RENDER_GAME = True
+RENDER_GAME = False
 
 # Global Constants
 SCREEN_HEIGHT = 600
@@ -428,7 +428,7 @@ def manyPlaysResults(rounds):
 def main():
     global aiPlayer
     print("Start")
-    initial_state = [(15, 250), (18, 350), (20, 450), (1000, 550)]
+    initial_state = [(100,100,100,100,100,100,100,100,100,100,100,100,100,100,100)]
     aiPlayer = KeyTreeClassifier(initial_state)
     # print(aiPlayer)
     # best_state, best_value = gradient_ascent(initial_state, 5000)

@@ -10,8 +10,8 @@ pygame.init()
 
 # Valid values: HUMAN_MODE or AI_MODE
 GAME_MODE = "AI_MODE"
-RENDER_GAME = True
 RENDER_GAME = False
+# RENDER_GAME = False
 
 # Global Constants
 SCREEN_HEIGHT = 600
@@ -354,7 +354,7 @@ def playGame(solutions):
                     nextObHeight = obstacles[1].getHeight()
                     nextObType = obstacles[1]
 
-                userInput = players_classifier[i].keySelector(distance, obHeight, game_speed, enumerate_obstacle(obType), nextObDistance, nextObHeight,nextObType)
+                userInput = players_classifier[i].keySelector(distance, obHeight, game_speed, enumerate_obstacle(obType), nextObDistance, nextObHeight,enumerate_obstacle(obType))
 
                 player.update(userInput)
                 if RENDER_GAME:
@@ -429,23 +429,24 @@ def PSOTree(rounds, particles):
 
     global global_best
     global_best = particles[0]
+    for particle in particles:
+        particle.best_fitness = global_best.fitness
+        particle.best_position = global_best.position[:]
     best_result = 0
 
     for _ in range(rounds) :
         results = manyPlaysResultsTrain(5, particles)
 
         for particle, fitness in zip(particles, results):
-            
             if fitness > particle.best_fitness:
                 particle.best_fitness = fitness
                 particle.best_position = particle.position[:]
-               
+            if fitness > best_result:
                 global_best = particle
                 best_result = fitness
-                print("best: ", best_result)
-                print("best postion: ", particle.position)
                
             tree.update_position(particle,global_best)
+
 
 
     return global_best, best_result
@@ -476,7 +477,7 @@ def manyPlaysResultsTest(rounds,best_solution):
 def main():
 
     initial_state = [tree.Particle() for _ in range(40)]
-    best_state, best_value = PSOTree(100,initial_state)
+    best_state, best_value = PSOTree(10,initial_state)
 
     print(best_value)
     # res, value = manyPlaysResultsTest(30, best_state)

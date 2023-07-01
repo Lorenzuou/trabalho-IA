@@ -2,61 +2,167 @@ import random
 import pygame
 from pygame.locals import *
 
+PARAMETERS_QTD = 15 
+SMALL_CACTUS = 0
+LARGE_CACTUS = 1
+
+BIRD = 2
+
+
 # Decision tree model parameters
 parameters = {
     'height_bird': 100,
     'distance_bird': 50,
     'distance_small_cactus': 300,
     'distance_large_cactus': 300,
+    'distance_bird_then_small_cactus': 300,
+    'distance_bird_then_large_cactus': 300,
+    'distance_bird_then_bird': 300,
+    'distance_small_cactus_then_bird': 300,
+    'distance_small_cactus_then_small_cactus': 300,
+    'distance_small_cactus_then_large_cactus': 300,
+    'distance_large_cactus_then_large_cactus': 300,
+    'distance_large_cactus_then_bird': 300, 
+    'distance_large_cactus_then_small_cactus': 300, 
+    'height_bird_after_bird': 50,
+    'height_bird_after_small_cactus': 50,
+    'height_bird_after_large_cactus': 50,
+    
 }
 
-# PSO parameters
-swarm_size = 20
-max_iterations = 100
-c1 = 2.05  # Cognitive component weight
-c2 = 2.05  # Social component weight
-w = 0.5  # Inertia weight
-max_velocity = 2
+# {
+#     'height_bird': 0,
+#     'distance_bird': 1,
+#     'distance_small_cactus': 2,
+#     'distance_large_cactus': 3,
+#     'distance_bird_then_small_cactus': 4,
+#     'distance_bird_then_large_cactus': 5,
+#     'distance_bird_then_bird': 6,
+#     'distance_small_cactus_then_bird': 7,
+#     'distance_small_cactus_then_small_cactus': 8,
+#     'distance_small_cactus_then_large_cactus': 9,
+#     'distance_large_cactus_then_large_cactus': 10,
+#     'distance_large_cactus_then_bird': 11,
+#     'distance_large_cactus_then_small_cactus': 12
+#     'height_bird_after_bird': 13,
+#     'height_bird_after_small_cactus': 14,
+#     'height_bird_after_large_cactus': 15,
+# }
 
 
 
 class Particle:
+    # PSO parameters
+    swarm_size = 20
+    max_iterations = 100
+    c1 = 2.05  # Cognitive component weight
+    c2 = 2.05  # Social component weight
+    w = 0.5  # Inertia weight
+    max_velocity = 2
+
+    def randomize(self):
+        # Soma valores pequenos entre 1 e 10 para cada parâmetro da position, para evitar que a velocidade seja sempre 0
+        for i in range(PARAMETERS_QTD):
+            self.position[i] = self.position[i] + random.uniform(-10, 10)
+
+
     def __init__(self,s = list(parameters.values()) ):
         self.position = s
-        self.velocity = [random.uniform(-max_velocity, max_velocity) for _ in range(4)]
+        self.randomize()
+        self.velocity = [0] * PARAMETERS_QTD
         self.best_position = self.position[:]
         self.best_fitness = 0
+        self.fitness = 0
+from math import floor
 
 
 def update_position(particle,global_best):
-    for i in range(4):
-        particle.velocity[i] = w * particle.velocity[i] + c1 * random.random() * (particle.best_position[i] - particle.position[i]) + c2 * random.random() * (global_best.position[i] - particle.position[i])
-        particle.velocity[i] = max(-max_velocity, min(max_velocity, particle.velocity[i]))
+    for i in range(PARAMETERS_QTD):
+        print("------------------")
+        print(Particle.w*particle.velocity[i])
+        print(Particle.c1*random.uniform(0,1)*(abs(particle.best_position[i]- particle.position[i])))
+        print(Particle.c2*random.uniform(0,1)*(abs(global_best.position[i] - particle.position[i])))
+        print("------------------")
+        particle.velocity[i] = floor(Particle.w*particle.velocity[i] + Particle.c1*random.uniform(0,1)*(abs(particle.position[i] - particle.position[i])) + 
+                                Particle.c2*random.uniform(0,1)*(abs(particle.best_position[i] - particle.position[i])))
         particle.position[i] += particle.velocity[i]
+    # print(particle.velocity)
+    # print(particle.position)
+
+
+
+
+
 
 def make_decision(state, distance, obHeight, speed, obType, nextObDistance, nextObHeight, nextObType):
-    if obType == 2:
-        if obHeight > state.position[0]: 
-            return 'K_DOWN'
-        else:
-            if distance > state.position[1]: 
-                return 'K_DOWN'
-            else:
-                return 'K_UP'
-    else: 
-        if obType == 1:
-            if distance > state.position[2]: 
-                return 'K_DOWN'
-            else:
-                return 'K_UP'
-        else:
-            if obType == 0:
-                if distance > state.position[3]: 
+    # Primeira, checa se é um pássaro
+    if obType == BIRD:
+       if nextObType == BIRD: 
+           if distance > state.position[6]: 
+                if obHeight > state.position[13]:
+                   return 'K_UP'
+                else: 
                     return 'K_DOWN'
+
+           else:
+               return 'K_UP'
+       else:
+              if nextObType == SMALL_CACTUS:
+                if distance > state.position[4]: 
+                     return 'K_DOWN'
                 else:
+                     return 'K_UP'
+              else:
+                if nextObType == LARGE_CACTUS:
+                     if distance > state.position[5]: 
+                          return 'K_DOWN'
+                     else:
+                          return 'K_UP'
+    else: 
+        # Checa se é um cacto pequeno
+        if obType == SMALL_CACTUS:
+            if nextObType ==BIRD: 
+                if distance > state.position[7]:
+                    if obHeight > state.position[14]:
+                        return 'K_DOWN'
+                    else: 
+                        return 'K_UP'
+                else: 
                     return 'K_UP'
             else:
-                return 'K_NO'
+                if nextObType == SMALL_CACTUS:
+                    if distance > state.position[8]: 
+                        return 'K_DOWN'
+                    else:
+                        return 'K_UP'
+                else:
+                    if nextObType == LARGE_CACTUS:
+                        if distance > state.position[9]: 
+                            return 'K_DOWN'
+                        else:
+                            return 'K_UP'
+        if obType == LARGE_CACTUS:
+            if nextObType ==BIRD: 
+                if distance > state.position[11]:
+                      if obHeight > state.position[15]:
+                            return 'K_DOWN'
+                      else: 
+                            return 'K_UP'
+                else: 
+                      return 'K_UP'
+            else:
+                if nextObType == LARGE_CACTUS:
+                    if distance > state.position[10]: 
+                        return 'K_DOWN'
+                    else:
+                        return 'K_UP'
+                else:
+                    if nextObType == SMALL_CACTUS:
+                        if distance > state.position[12]: 
+                            return 'K_DOWN'
+                        else:
+                            return 'K_UP'
+                        
     
 
 class KeyTreeClassifier:
