@@ -6,13 +6,20 @@ import numpy as np
 from sys import exit
 import tree as tree
 
+import pandas as pd
+
 pygame.init()
 
 # Valid values: HUMAN_MODE or AI_MODE
 GAME_MODE = "AI_MODE"
 RENDER_GAME = False
-# RENDER_GAME = False
+# RENDER_GAME = True
 
+# NUM_PARTICLES = 100
+# ROUNDS = 5000
+
+NUM_PARTICLES = 1000
+ROUNDS = 10000
 # Global Constants
 SCREEN_HEIGHT = 600
 SCREEN_WIDTH = 1100
@@ -424,37 +431,9 @@ def generate_neighborhood(state):
 
 
 
-def PSOTree(rounds, particles):
-
-
-    global global_best
-    global_best = particles[0]
-    for particle in particles:
-        particle.best_fitness = global_best.fitness
-        particle.best_position = global_best.position[:]
-    best_result = 0
-
-    for _ in range(rounds) :
-        results = manyPlaysResultsTrain(5, particles)
-
-        for particle, fitness in zip(particles, results):
-            if fitness > particle.best_fitness:
-                particle.best_fitness = fitness
-                particle.best_position = particle.position[:]
-            if fitness > best_result:
-                global_best = particle
-                best_result = fitness
-               
-            tree.update_position(particle,global_best)
-
-
-
-    return global_best, best_result
-
-
-
 def manyPlaysResultsTrain(rounds,solutions):
     results = []
+
     for round in range(rounds):
         results += [playGame(solutions)]
 
@@ -463,7 +442,6 @@ def manyPlaysResultsTrain(rounds,solutions):
 
     mean_results = np.mean(npResults,axis = 0) - np.std(npResults,axis=0) # axis 0 calcula media da coluna
     return mean_results
-    return 0
 
 
 def manyPlaysResultsTest(rounds,best_solution):
@@ -474,15 +452,63 @@ def manyPlaysResultsTest(rounds,best_solution):
     return (results, npResults.mean() - npResults.std())
 
 
+def PSOTree(rounds, particles):
+
+    df_train = pd.DataFrame(columns=['round','best_fitness','best_position'])
+
+    global global_best
+    global_best = particles[0]
+
+    best_result = 0
+    print("Initial best position: ", global_best.position)
+
+    for i in range(rounds) :
+        results = manyPlaysResultsTrain(1, particles)
+
+        # A cada 10 rounds, mostra o melhor resultado dentro de results
+        if i % 10 == 0:
+            print("Round ", i, " best result: ", max(results))
+            df_train = df_train.append({'round': i, 'best_fitness': max(results), 'best_position': global_best.position}, ignore_index=True)
+            
+
+        for particle, fitness in zip(particles, results):
+            if fitness > particle.best_fitness:
+                particle.best_fitness = fitness
+                particle.best_position = particle.position[:]
+            if fitness > best_result:
+                print("New best result: ", fitness, " in round ",i)
+                global_best = particle
+                best_result = fitness
+               
+            particle.update_position(global_best.position)
+
+    print("Final best position: ", global_best.position)
+    df_train.to_csv('train.csv', index=False)
+
+    #save best solution position and fitness
+    df_best = pd.DataFrame(columns=['best_fitness','best_position'])
+    df_best = df_best.append({'best_fitness': best_result, 'best_position': global_best.position}, ignore_index=True)
+    df_best.to_csv('best.csv', index=False)
+
+    return global_best, best_result
+
+
+
 def main():
 
-    initial_state = [tree.Particle() for _ in range(40)]
-    best_state, best_value = PSOTree(10,initial_state)
+
+    initial_state = []
+    for i in range(NUM_PARTICLES):
+        rand_int = random.randint(0, 10000000)
+        initial_state.append(tree.Particle(seed=rand_int))
+
+
+    best_state, best_value = PSOTree(ROUNDS,initial_state)
 
     print(best_value)
-    # res, value = manyPlaysResultsTest(30, best_state)
-    # npRes = np.asarray(res)
-    # print(res, npRes.mean(), npRes.std(), value)
+    res, value = manyPlaysResultsTest(30, best_state)
+    npRes = np.asarray(res)
+    print(res, npRes.mean(), npRes.std(), value)
 
 
 main()

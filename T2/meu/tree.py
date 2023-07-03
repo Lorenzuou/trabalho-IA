@@ -1,8 +1,9 @@
 import random
 import pygame
 from pygame.locals import *
+from math import floor
 
-PARAMETERS_QTD = 15 
+PARAMETERS_QTD = 16
 SMALL_CACTUS = 0
 LARGE_CACTUS = 1
 
@@ -24,9 +25,9 @@ parameters = {
     'distance_large_cactus_then_large_cactus': 300,
     'distance_large_cactus_then_bird': 300, 
     'distance_large_cactus_then_small_cactus': 300, 
-    'height_bird_after_bird': 50,
-    'height_bird_after_small_cactus': 50,
-    'height_bird_after_large_cactus': 50,
+    'height_bird_after_bird': 75,
+    'height_bird_after_small_cactus': 75,
+    'height_bird_after_large_cactus': 75,
     
 }
 
@@ -58,42 +59,37 @@ class Particle:
     c1 = 2.05  # Cognitive component weight
     c2 = 2.05  # Social component weight
     w = 0.5  # Inertia weight
-    max_velocity = 2
+    # max_velocity = 2
 
-    def randomize(self):
+    def randomize(self, position):
         # Soma valores pequenos entre 1 e 10 para cada parâmetro da position, para evitar que a velocidade seja sempre 0
         for i in range(PARAMETERS_QTD):
-            self.position[i] = self.position[i] + random.uniform(-10, 10)
+            position[i] = position[i] + random.uniform(-50, 50)
+        return position
+    def __init__(self,seed= None ):
+        if seed:
+            random.seed(seed)
 
-
-    def __init__(self,s = list(parameters.values()) ):
-        self.position = s
-        self.randomize()
+        s = list(parameters.values())
+        self.position = self.randomize(s)
         self.velocity = [0] * PARAMETERS_QTD
         self.best_position = self.position[:]
         self.best_fitness = 0
         self.fitness = 0
-from math import floor
 
 
-def update_position(particle,global_best):
-    for i in range(PARAMETERS_QTD):
-        print("------------------")
-        print(Particle.w*particle.velocity[i])
-        print(Particle.c1*random.uniform(0,1)*(abs(particle.best_position[i]- particle.position[i])))
-        print(Particle.c2*random.uniform(0,1)*(abs(global_best.position[i] - particle.position[i])))
-        print("------------------")
-        particle.velocity[i] = floor(Particle.w*particle.velocity[i] + Particle.c1*random.uniform(0,1)*(abs(particle.position[i] - particle.position[i])) + 
-                                Particle.c2*random.uniform(0,1)*(abs(particle.best_position[i] - particle.position[i])))
-        particle.position[i] += particle.velocity[i]
-    # print(particle.velocity)
-    # print(particle.position)
+    def update_position(self,global_best):
+        for i in range(PARAMETERS_QTD):
+    
+            self.velocity[i] = self.w * self.velocity[i] + self.c1 * random.random() * (self.best_position[i] - self.position[i]) + self.c2 * random.random() * (global_best[i] - self.position[i])
+            
+            self.position[i] += self.velocity[i]
+
+        # print(global_best == particle.best_position)
 
 
 
-
-
-
+# Árvore de decisão
 def make_decision(state, distance, obHeight, speed, obType, nextObDistance, nextObHeight, nextObType):
     # Primeira, checa se é um pássaro
     if obType == BIRD:
@@ -172,12 +168,6 @@ class KeyTreeClassifier:
         
 
     def keySelector(self, distance, obHeight, speed, obType, nextObDistance, nextObHeight, nextObType):
-        # for s, d in self.state:
-        #     if speed < s:
-        #         limDist = d
-        #         break
-        # print(self.parameters)
-
 
         decision = make_decision(self.parameters, distance, obHeight, speed, obType, nextObDistance, nextObHeight, nextObType)
         return decision
