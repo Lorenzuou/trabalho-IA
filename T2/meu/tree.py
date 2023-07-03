@@ -94,14 +94,13 @@ def make_decision(state, distance, obHeight, speed, obType, nextObDistance, next
     # Primeira, checa se é um pássaro
     if obType == BIRD:
        if nextObType == BIRD: 
-           if distance > state.position[6]: 
+            if distance > state.position[6]: 
+                return 'K_DOWN'
+            else:
                 if obHeight > state.position[13]:
-                   return 'K_UP'
+                        return 'K_DOWN'
                 else: 
-                    return 'K_DOWN'
-
-           else:
-               return 'K_UP'
+                        return 'K_UP'
        else:
               if nextObType == SMALL_CACTUS:
                 if distance > state.position[4]: 
@@ -119,12 +118,12 @@ def make_decision(state, distance, obHeight, speed, obType, nextObDistance, next
         if obType == SMALL_CACTUS:
             if nextObType ==BIRD: 
                 if distance > state.position[7]:
+                    return 'K_DOWN'
+                else: 
                     if obHeight > state.position[14]:
                         return 'K_DOWN'
                     else: 
                         return 'K_UP'
-                else: 
-                    return 'K_UP'
             else:
                 if nextObType == SMALL_CACTUS:
                     if distance > state.position[8]: 
@@ -140,12 +139,12 @@ def make_decision(state, distance, obHeight, speed, obType, nextObDistance, next
         if obType == LARGE_CACTUS:
             if nextObType ==BIRD: 
                 if distance > state.position[11]:
-                      if obHeight > state.position[15]:
-                            return 'K_DOWN'
-                      else: 
-                            return 'K_UP'
+                    return 'K_DOWN'
                 else: 
-                      return 'K_UP'
+                    if obHeight > state.position[15]:
+                        return 'K_DOWN'
+                    else: 
+                        return 'K_UP'
             else:
                 if nextObType == LARGE_CACTUS:
                     if distance > state.position[10]: 

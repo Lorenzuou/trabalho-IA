@@ -416,6 +416,42 @@ def gradient_ascent(state, max_time):
 from scipy import stats
 import numpy as np
 
+def PSOTree(rounds, particles):
+
+
+    global global_best
+    global_best = particles[0]
+
+    best_result = 0
+    print("Initial best position: ", global_best.position)
+
+    for i in range(rounds) :
+        results = manyPlaysResults(1, particles)
+
+        # A cada 10 rounds, mostra o melhor resultado dentro de results
+        if i % 10 == 0:
+            print("Round ", i, " best result: ", max(results))
+            #turn the list global_best.position into a string
+            position_string = ""
+            for position in global_best.position:
+                position_string += str(position) + " "
+
+
+        for particle, fitness in zip(particles, results):
+            if fitness > particle.best_fitness:
+                particle.best_fitness = fitness
+                particle.best_position = particle.position[:]
+            if fitness > best_result:
+                print("New best result: ", fitness, " in round ",i)
+                global_best = particle
+                best_result = fitness
+               
+            particle.update_position(global_best.position)
+
+
+
+    return global_best, best_result
+
 
 def manyPlaysResults(rounds):
     results = []
@@ -429,13 +465,11 @@ def main():
     global aiPlayer
     print("Start")
     initial_state = [(100,100,100,100,100,100,100,100,100,100,100,100,100,100,100)]
-    aiPlayer = KeyTreeClassifier(initial_state)
-    # print(aiPlayer)
-    # best_state, best_value = gradient_ascent(initial_state, 5000)
-    # aiPlayer = KeyTreeClassifier(best_state)
-    # res, value = manyPlaysResults(30)
-    # npRes = np.asarray(res)
-    # print(res, npRes.mean(), npRes.std(), value)
+   
+    aiPlayer = KeyClassifier(initial_state)
+    res, value = manyPlaysResults(30)
+    npRes = np.asarray(res)
+    print(res, npRes.mean(), npRes.std(), value)
 
 
 main()

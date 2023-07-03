@@ -19,7 +19,7 @@ RENDER_GAME = False
 # ROUNDS = 5000
 
 NUM_PARTICLES = 1000
-ROUNDS = 10000
+ROUNDS = 5000
 # Global Constants
 SCREEN_HEIGHT = 600
 SCREEN_WIDTH = 1100
@@ -468,8 +468,12 @@ def PSOTree(rounds, particles):
         # A cada 10 rounds, mostra o melhor resultado dentro de results
         if i % 10 == 0:
             print("Round ", i, " best result: ", max(results))
-            df_train = df_train.append({'round': i, 'best_fitness': max(results), 'best_position': global_best.position}, ignore_index=True)
-            
+            #turn the list global_best.position into a string
+            position_string = ""
+            for position in global_best.position:
+                position_string += str(position) + " "
+
+            df_train = pd.concat([df_train, pd.DataFrame({'round': i, 'best_fitness': max(results), 'best_position': position_string}, index=[0])], ignore_index=True)
 
         for particle, fitness in zip(particles, results):
             if fitness > particle.best_fitness:
@@ -487,7 +491,7 @@ def PSOTree(rounds, particles):
 
     #save best solution position and fitness
     df_best = pd.DataFrame(columns=['best_fitness','best_position'])
-    df_best = df_best.append({'best_fitness': best_result, 'best_position': global_best.position}, ignore_index=True)
+    df_best = pd.concat([df_best, pd.DataFrame({'best_fitness': best_result, 'best_position': global_best.position}, index=[0])], ignore_index=True)
     df_best.to_csv('best.csv', index=False)
 
     return global_best, best_result
