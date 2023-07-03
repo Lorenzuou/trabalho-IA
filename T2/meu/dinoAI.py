@@ -3,7 +3,6 @@ import os
 import random
 import time
 from sys import exit
-
 from tree import KeyTreeClassifier
 
 pygame.init()
@@ -39,6 +38,14 @@ CLOUD = pygame.image.load(os.path.join("Assets/Other", "Cloud.png"))
 
 BG = pygame.image.load(os.path.join("Assets/Other", "Track.png"))
 
+def enumerate_obstacle(ob): 
+    if isinstance(ob, SmallCactus):
+        return 0
+    elif isinstance(ob, LargeCactus):
+        return 1
+    elif isinstance(ob, Bird):
+        return 2
+    return -1
 
 class Dinosaur:
     X_POS = 90
@@ -323,9 +330,8 @@ def playGame():
         if GAME_MODE == "HUMAN_MODE":
             userInput = playerKeySelector()
         else:
-            
-            userInput = aiPlayer.keySelector(distance, obHeight, game_speed, obType, nextObDistance, nextObHeight,
-                                             nextObType)
+            userInput = aiPlayer.keySelector(distance, obHeight, game_speed, enumerate_obstacle(obType), nextObDistance, nextObHeight,enumerate_obstacle(obType))
+
 
         if len(obstacles) == 0 or obstacles[-1].getXY()[0] < spawn_dist:
             spawn_dist = random.randint(0, 670)
@@ -403,7 +409,7 @@ def gradient_ascent(state, max_time):
         neighborhood = generate_neighborhood(state)
         better = False
         for s in neighborhood:
-            aiPlayer = KeyTreeClassifier(s)
+            aiPlayer = KeySimplestClassifier(s)
             res, value = manyPlaysResults(3)
             if value > max_value:
                 state = s
@@ -416,42 +422,6 @@ def gradient_ascent(state, max_time):
 from scipy import stats
 import numpy as np
 
-def PSOTree(rounds, particles):
-
-
-    global global_best
-    global_best = particles[0]
-
-    best_result = 0
-    print("Initial best position: ", global_best.position)
-
-    for i in range(rounds) :
-        results = manyPlaysResults(1, particles)
-
-        # A cada 10 rounds, mostra o melhor resultado dentro de results
-        if i % 10 == 0:
-            print("Round ", i, " best result: ", max(results))
-            #turn the list global_best.position into a string
-            position_string = ""
-            for position in global_best.position:
-                position_string += str(position) + " "
-
-
-        for particle, fitness in zip(particles, results):
-            if fitness > particle.best_fitness:
-                particle.best_fitness = fitness
-                particle.best_position = particle.position[:]
-            if fitness > best_result:
-                print("New best result: ", fitness, " in round ",i)
-                global_best = particle
-                best_result = fitness
-               
-            particle.update_position(global_best.position)
-
-
-
-    return global_best, best_result
-
 
 def manyPlaysResults(rounds):
     results = []
@@ -463,13 +433,21 @@ def manyPlaysResults(rounds):
 
 def main():
     global aiPlayer
-    print("Start")
-    initial_state = [(100,100,100,100,100,100,100,100,100,100,100,100,100,100,100)]
-   
-    aiPlayer = KeyClassifier(initial_state)
+
+    initial_state = [(15, 250), (18, 350), (20, 450), (1000, 550)]
+    aiPlayer = KeySimplestClassifier(initial_state)
+    best_state, best_value = gradient_ascent(initial_state, 5000)
+    aiPlayer = KeySimplestClassifier(best_state)
     res, value = manyPlaysResults(30)
     npRes = np.asarray(res)
-    print(res, npRes.mean(), npRes.std(), value)
+    print(res, npRes.mean(), npRes.std(),value)
 
+
+    best_state = [64.6707522471203, 32.42156143561229, 435.19765492977376, 204.2340652558216, 319.0895156921588, 296.934768916374, 301.54099249539814, 325.2883730348933, 318.9922632634386, 226.6432899086567, 309.79012376092646, 270.18847239963736, 327.84179892546445, 57.713796836353026, 62.240135708794355, 65.57056757903737]
+    # same, but with commas
+    aiPlayer = KeyTreeClassifier(best_state)
+    res, value = manyPlaysResults(30)
+    npRes = np.asarray(res)
+    print(res, npRes.mean(), npRes.std(),value)
 
 main()

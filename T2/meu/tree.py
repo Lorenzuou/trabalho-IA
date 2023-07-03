@@ -15,15 +15,15 @@ parameters = {
     'height_bird': 100,
     'distance_bird': 50,
     'distance_small_cactus': 300,
-    'distance_large_cactus': 300,
+    'distance_large_cactus': 250,
     'distance_bird_then_small_cactus': 300,
-    'distance_bird_then_large_cactus': 300,
+    'distance_bird_then_large_cactus': 250,
     'distance_bird_then_bird': 300,
     'distance_small_cactus_then_bird': 300,
     'distance_small_cactus_then_small_cactus': 300,
-    'distance_small_cactus_then_large_cactus': 300,
-    'distance_large_cactus_then_large_cactus': 300,
-    'distance_large_cactus_then_bird': 300, 
+    'distance_small_cactus_then_large_cactus': 250,
+    'distance_large_cactus_then_large_cactus': 250,
+    'distance_large_cactus_then_bird': 250, 
     'distance_large_cactus_then_small_cactus': 300, 
     'height_bird_after_bird': 75,
     'height_bird_after_small_cactus': 75,
@@ -66,12 +66,16 @@ class Particle:
         for i in range(PARAMETERS_QTD):
             position[i] = position[i] + random.uniform(-50, 50)
         return position
-    def __init__(self,seed= None ):
+    def __init__(self,seed= None, state = None ):
         if seed:
             random.seed(seed)
-
-        s = list(parameters.values())
-        self.position = self.randomize(s)
+        if state: 
+            self.position = state
+        else: 
+            s = list(parameters.values())
+            self.position = self.randomize(s)
+        
+       
         self.velocity = [0] * PARAMETERS_QTD
         self.best_position = self.position[:]
         self.best_fitness = 0
@@ -136,7 +140,7 @@ def make_decision(state, distance, obHeight, speed, obType, nextObDistance, next
                             return 'K_DOWN'
                         else:
                             return 'K_UP'
-        if obType == LARGE_CACTUS:
+        else: 
             if nextObType ==BIRD: 
                 if distance > state.position[11]:
                     return 'K_DOWN'
@@ -162,7 +166,11 @@ def make_decision(state, distance, obHeight, speed, obType, nextObDistance, next
 
 class KeyTreeClassifier:
     def __init__(self, parameters):
-        self.parameters = parameters
+        if isinstance(parameters, list):
+            self.parameters = Particle(state=parameters)
+        else: 
+
+            self.parameters = parameters
 
         
 
