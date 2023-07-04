@@ -19,7 +19,7 @@ RENDER_GAME = False
 # ROUNDS = 5000
 
 NUM_PARTICLES = 150
-ROUNDS = 50
+ROUNDS = 200
 # Global Constants
 SCREEN_HEIGHT = 600
 SCREEN_WIDTH = 1100
@@ -464,7 +464,7 @@ def PSOTree(rounds, particles):
     print("Initial best position: ", global_best.position)
 
     for i in range(rounds) :
-        results = manyPlaysResultsTrain(30, particles)
+        results = manyPlaysResultsTrain(20, particles)
 
         # A cada 10 rounds, mostra o melhor resultado dentro de results
         if i % 10 == 0:
