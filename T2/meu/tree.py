@@ -3,7 +3,7 @@ import pygame
 from pygame.locals import *
 from math import floor
 
-PARAMETERS_QTD = 12
+PARAMETERS_QTD = 13
 SMALL_CACTUS = 0
 LARGE_CACTUS = 1
 
@@ -11,18 +11,19 @@ BIRD = 2
 
 
 parameters = { 
-    'distance_bird_then_bird': 250,
+    'distance_bird_then_bird': 30,
     'height_bird_after_bird': 75,
-    'distance_bird_then_small_cactus': 250,
-    'distance_bird_then_large_cactus': 250,
-    'distance_small_cactus_then_bird': 250,
+    'distance_bird_then_small_cactus': 30,
+    'distance_bird_then_large_cactus': 30,
+    'distance_small_cactus_then_bird': 30,
     'height_bird_after_small_cactus': 75,
-    'distance_small_cactus_then_small_cactus': 250,
-    'distance_small_cactus_then_large_cactus': 250,
-    'distance_large_cactus_then_bird': 250,
+    'distance_small_cactus_then_small_cactus': 30,
+    'distance_small_cactus_then_large_cactus': 30,
+    'distance_large_cactus_then_bird': 30,
     'height_bird_after_large_cactus': 75,
-    'distance_large_cactus_then_small_cactus': 250,
-    'distance_large_cactus_then_large_cactus': 250,
+    'distance_large_cactus_then_small_cactus': 30,
+    'distance_large_cactus_then_large_cactus': 30,
+    'shall_go_down': 1,
     
 }
 
@@ -53,15 +54,15 @@ class Particle:
     # PSO parameters
     swarm_size = 20
     max_iterations = 100
-    c1 = 1.2  # Cognitive component weight
-    c2 = 1.2  # Social component weight
+    c1 = 2.05  # Cognitive component weight
+    c2 = 2.05  # Social component weight
     w = 0.5  # Inertia weight
     # max_velocity = 2
 
     def randomize(self, position):
         # Soma valores pequenos entre 1 e 10 para cada parâmetro da position, para evitar que a velocidade seja sempre 0
         for i in range(PARAMETERS_QTD):
-            position[i] = position[i] + random.randint(-int(position[i] * 0.35), int(position[i] * 0.35))
+            position[i] = position[i] + position[i] * random.uniform(-1,1) * 0.35
         return position
     def __init__(self,seed= None, state = None ):
         if seed:
@@ -93,71 +94,77 @@ class Particle:
 # Árvore de decisão
 def make_decision(state, distance, obHeight, speed, obType, nextObDistance, nextObHeight, nextObType):
         # Primeira, checa se é um pássaro
-        if obType == BIRD:
-            if nextObType == BIRD: 
-                    if distance > state.position[0]: 
-                        return 'K_DOWN'
-                    else:
-                        if obHeight > state.position[1]:
-                                return 'K_DOWN'
-                        else: 
-                                return 'K_UP'
+        if distance < 0: 
+            if distance < speed * state.position[-1]: 
+                return 'K_DOWN'
             else:
-                    if nextObType == SMALL_CACTUS:
-                        if distance > state.position[2]: 
-                            return 'K_DOWN'
-                        else:
-                            return 'K_UP'
-                    else:
-                        if nextObType == LARGE_CACTUS:
-                            if distance > state.position[3]: 
-                                return 'K_DOWN'
-                            else:
-                                return 'K_UP'
+                return 'K_UP'
         else: 
-            # Checa se é um cacto pequeno
-            if obType == SMALL_CACTUS:
-                if nextObType ==BIRD: 
-                    if distance > state.position[4]:
-                        return 'K_DOWN'
-                    else: 
-                        if obHeight > state.position[5]:
-                            return 'K_DOWN'
-                        else: 
-                            return 'K_UP'
-                else:
-                    if nextObType == SMALL_CACTUS:
-                        if distance > state.position[6]: 
+            if obType == BIRD:
+                if nextObType == BIRD: 
+                        if distance > speed * state.position[0]: 
                             return 'K_DOWN'
                         else:
-                            return 'K_UP'
-                    else:
-                        if nextObType == LARGE_CACTUS:
-                            if distance > state.position[7]: 
+                            if obHeight > state.position[1]:
+                                    return 'K_DOWN'
+                            else: 
+                                    return 'K_UP'
+                else:
+                        if nextObType == SMALL_CACTUS:
+                            if distance > speed * state.position[2]: 
                                 return 'K_DOWN'
                             else:
                                 return 'K_UP'
+                        else:
+                            if nextObType == LARGE_CACTUS:
+                                if distance > speed * state.position[3]: 
+                                    return 'K_DOWN'
+                                else:
+                                    return 'K_UP'
             else: 
-                if nextObType ==BIRD: 
-                    if distance > state.position[8]:
-                        return 'K_DOWN'
-                    else: 
-                        if obHeight > state.position[9]:
+                # Checa se é um cacto pequeno
+                if obType == SMALL_CACTUS:
+                    if nextObType ==BIRD: 
+                        if distance > speed * state.position[4]:
                             return 'K_DOWN'
                         else: 
-                            return 'K_UP'
-                else:
-                    if nextObType == LARGE_CACTUS:
-                        if distance > state.position[10]: 
-                            return 'K_DOWN'
-                        else:
-                            return 'K_UP'
+                            if obHeight >state.position[5]:
+                                return 'K_DOWN'
+                            else: 
+                                return 'K_UP'
                     else:
                         if nextObType == SMALL_CACTUS:
-                            if distance > state.position[11]: 
+                            if distance > speed * state.position[6]: 
                                 return 'K_DOWN'
                             else:
                                 return 'K_UP'
+                        else:
+                            if nextObType == LARGE_CACTUS:
+                                if distance > speed * state.position[7]: 
+                                    return 'K_DOWN'
+                                else:
+                                    return 'K_UP'
+                else: 
+                    if nextObType ==BIRD: 
+                        if distance > speed * state.positioan[8]:
+                            return 'K_DOWN'
+                        else: 
+                            if obHeight > state.position[9]:
+                                return 'K_DOWN'
+                            else: 
+                                return 'K_UP'
+                    else:
+                        if nextObType == LARGE_CACTUS:
+                            if distance > speed * state.position[10]: 
+                                return 'K_DOWN'
+                            else:
+                                return 'K_UP'
+                        else:
+                            if nextObType == SMALL_CACTUS:
+                                if distance > speed * state.position[11]: 
+                                    return 'K_DOWN'
+                                else:
+                                    return 'K_UP'
 
     
 
