@@ -11,19 +11,19 @@ BIRD = 2
 
 
 parameters = { 
-    'distance_bird_then_bird': 30,
-    'height_bird_after_bird': 75,
-    'distance_bird_then_small_cactus': 30,
-    'distance_bird_then_large_cactus': 30,
-    'distance_small_cactus_then_bird': 30,
-    'height_bird_after_small_cactus': 75,
-    'distance_small_cactus_then_small_cactus': 30,
-    'distance_small_cactus_then_large_cactus': 30,
-    'distance_large_cactus_then_bird': 30,
-    'height_bird_after_large_cactus': 75,
-    'distance_large_cactus_then_small_cactus': 30,
-    'distance_large_cactus_then_large_cactus': 30,
-    'shall_go_down': 1,
+    'distance_bird_then_bird': 23,
+    'height_bird_after_bird': 72,
+    'distance_bird_then_small_cactus': 31,
+    'distance_bird_then_large_cactus': 73,
+    'distance_small_cactus_then_bird': 108,
+    'height_bird_after_small_cactus': -93,
+    'distance_small_cactus_then_small_cactus': 26,
+    'distance_small_cactus_then_large_cactus': 37,
+    'distance_large_cactus_then_bird': -134,
+    'height_bird_after_large_cactus': 408,
+    'distance_large_cactus_then_small_cactus': 28,
+    'distance_large_cactus_then_large_cactus': 34,
+    'shall_go_down': 12,
     
 }
 

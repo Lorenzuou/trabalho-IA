@@ -434,13 +434,13 @@ def manyPlaysResults(rounds):
 def main():
     global aiPlayer
 
-    # initial_state = [(15, 250), (18, 350), (20, 450), (1000, 550)]
-    # aiPlayer = KeySimplestClassifier(initial_state)
-    # best_state, best_value = gradient_ascent(initial_state, 5000)
-    # aiPlayer = KeySimplestClassifier(best_state)
-    # res, value = manyPlaysResults(30)
-    # npRes = np.asarray(res)
-    # print(res, npRes.mean(), npRes.std(),value)
+    initial_state = [(15, 250), (18, 350), (20, 450), (1000, 550)]
+    aiPlayer = KeySimplestClassifier(initial_state)
+    best_state, best_value = gradient_ascent(initial_state, 5000)
+    aiPlayer = KeySimplestClassifier(best_state)
+    res, value = manyPlaysResults(30)
+    npRes = np.asarray(res)
+    print(res, npRes.mean(), npRes.std(),value)
 
 
     best_state = [23.48898493199755, 72.49314853923103, 31.94509767449949, 0.5531072773047114, 713.1302652929355, -111.57767760077975, 26.745994354430984, 37.70151398045787, -135.0702352028012, -260.9663335144385, 28.183034841604425, 34.37116534436438, 11.429333058174866]
