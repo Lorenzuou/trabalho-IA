@@ -9,7 +9,7 @@ pygame.init()
 
 # Valid values: HUMAN_MODE or AI_MODE
 GAME_MODE = "AI_MODE"
-RENDER_GAME = False
+RENDER_GAME = True
 
 # Global Constants
 SCREEN_HEIGHT = 600
@@ -434,16 +434,16 @@ def manyPlaysResults(rounds):
 def main():
     global aiPlayer
 
-    initial_state = [(15, 250), (18, 350), (20, 450), (1000, 550)]
-    aiPlayer = KeySimplestClassifier(initial_state)
-    best_state, best_value = gradient_ascent(initial_state, 5000)
-    aiPlayer = KeySimplestClassifier(best_state)
-    res, value = manyPlaysResults(30)
-    npRes = np.asarray(res)
-    print(res, npRes.mean(), npRes.std(),value)
+    # initial_state = [(15, 250), (18, 350), (20, 450), (1000, 550)]
+    # aiPlayer = KeySimplestClassifier(initial_state)
+    # best_state, best_value = gradient_ascent(initial_state, 5000)
+    # aiPlayer = KeySimplestClassifier(best_state)
+    # res, value = manyPlaysResults(30)
+    # npRes = np.asarray(res)
+    # print(res, npRes.mean(), npRes.std(),value)
 
 
-    best_state = [64.6707522471203, 32.42156143561229, 435.19765492977376, 204.2340652558216, 319.0895156921588, 296.934768916374, 301.54099249539814, 325.2883730348933, 318.9922632634386, 226.6432899086567, 309.79012376092646, 270.18847239963736, 327.84179892546445, 57.713796836353026, 62.240135708794355, 65.57056757903737]
+    best_state = [337.99858838112476, 78.0690924145361, 221.3095960919825, 259.6399191977637, 324.61606076693715, 65.43035424323713, 317.7161283576808, 11.951720423041955, 755.163319657348, 82.88006401925777, 989.9411975431804, 279.623920012042, 308.0303361172113]
     # same, but with commas
     aiPlayer = KeyTreeClassifier(best_state)
     res, value = manyPlaysResults(30)
