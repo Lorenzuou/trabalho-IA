@@ -8,8 +8,8 @@ from neural import DinoClassifier
 pygame.init()
 
 # Valid values: HUMAN_MODE or AI_MODE
-GAME_MODE = "AI_MODEH"
-RENDER_GAME = False
+GAME_MODE = "HUMAN_MODE"
+RENDER_GAME = True
 
 # Global Constants
 SCREEN_HEIGHT = 600
@@ -254,7 +254,7 @@ def playerKeySelector():
 def playGame():
     global game_speed, x_pos_bg, y_pos_bg, points, obstacles
     run = True
-
+    logs = []
     clock = pygame.time.Clock()
     cloud = Cloud()
     font = pygame.font.Font('freesansbold.ttf', 20)
@@ -321,9 +321,15 @@ def playGame():
 
         if GAME_MODE == "HUMAN_MODE":
             userInput = playerKeySelector()
+            # FAZ LOG, PARA CRIAR DATASET
+            if userInput != "K_NO":
+                logs.append((userInput, distance, obHeight, game_speed, obType, nextObDistance, nextObHeight, nextObType))
+            
+
         else:
             userInput = aiPlayer.keySelector(distance, obHeight, game_speed, obType, nextObDistance, nextObHeight,
                                              nextObType)
+        
 
         if len(obstacles) == 0 or obstacles[-1].getXY()[0] < spawn_dist:
             spawn_dist = random.randint(0, 670)
@@ -360,6 +366,14 @@ def playGame():
         for obstacle in obstacles:
             if player.dino_rect.colliderect(obstacle.rect):
                 if RENDER_GAME:
+                    #write logs to file, append
+                    with open('logs.csv', 'a') as f:
+                        for log in logs:
+                            print(log)
+                            #turn tuple into string, separated by comma
+                            log = ','.join(str(x) for x in log)
+                            f.write(log)
+                            f.write('\n')
                     pygame.time.delay(2000)
                 death_count += 1
                 return points
