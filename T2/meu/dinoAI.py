@@ -434,15 +434,15 @@ def manyPlaysResults(rounds):
 def main():
     global aiPlayer
 
-    # initial_state = [(15, 250), (18, 350), (20, 450), (1000, 550)]
-    # aiPlayer = KeySimplestClassifier(initial_state)
-    # best_state, best_value = gradient_ascent(initial_state, 5000)
-    # aiPlayer = KeySimplestClassifier(best_state)
-    # res, value = manyPlaysResults(30)
-    # npRes = np.asarray(res)
-    # print(res, npRes.mean(), npRes.std(),value)
+    initial_state = [(15, 250), (18, 350), (20, 450), (1000, 550)]
+    aiPlayer = KeySimplestClassifier(initial_state)
+    best_state, best_value = gradient_ascent(initial_state, 5000)
+    aiPlayer = KeySimplestClassifier(best_state)
+    res, value = manyPlaysResults(30)
+    npRes = np.asarray(res)
+    print(res, npRes.mean(), npRes.std(),value)
 
-
+    # Melhor estado do dinossauro utilizando PSO e Árvore de Decisão
     best_state = [337.99858838112476, 78.0690924145361, 221.3095960919825, 259.6399191977637, 324.61606076693715, 65.43035424323713, 317.7161283576808, 11.951720423041955, 755.163319657348, 82.88006401925777, 989.9411975431804, 279.623920012042, 308.0303361172113]
     # same, but with commas
     aiPlayer = KeyTreeClassifier(best_state)
