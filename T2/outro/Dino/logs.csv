@@ -1,0 +1,283 @@
+K_UP,360,58,10,<__main__.LargeCactus object at 0x00000205FFD748E0>,2000,0,2
+K_UP,850,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_UP,840,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_UP,830,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_UP,820,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_UP,810,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_UP,800,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_UP,790,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,330,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,320,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,310,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,300,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,290,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,280,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,270,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,260,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,250,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,240,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,230,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,220,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,210,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,200,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,190,83,10,<__main__.Bird object at 0x000002957D814430>,2000,0,2
+K_DOWN,180,83,10,<__main__.Bird object at 0x000002957D814430>,1090,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,170,83,10,<__main__.Bird object at 0x000002957D814430>,1080,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,160,83,10,<__main__.Bird object at 0x000002957D814430>,1070,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,150,83,10,<__main__.Bird object at 0x000002957D814430>,1060,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,140,83,10,<__main__.Bird object at 0x000002957D814430>,1050,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,130,83,10,<__main__.Bird object at 0x000002957D814430>,1040,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,120,83,10,<__main__.Bird object at 0x000002957D814430>,1030,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,110,83,10,<__main__.Bird object at 0x000002957D814430>,1020,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,100,83,10,<__main__.Bird object at 0x000002957D814430>,1010,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,90,83,10,<__main__.Bird object at 0x000002957D814430>,1000,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,80,83,10,<__main__.Bird object at 0x000002957D814430>,990,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,70,83,10,<__main__.Bird object at 0x000002957D814430>,980,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,60,83,10,<__main__.Bird object at 0x000002957D814430>,970,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,50,83,10,<__main__.Bird object at 0x000002957D814430>,960,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,40,83,10,<__main__.Bird object at 0x000002957D814430>,950,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,30,83,10,<__main__.Bird object at 0x000002957D814430>,940,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_DOWN,20,83,10,<__main__.Bird object at 0x000002957D814430>,930,38,<__main__.SmallCactus object at 0x000002957FEA2400>
+K_UP,240,38,10,<__main__.SmallCactus object at 0x000002957FEA2400>,2000,0,2
+K_UP,230,38,10,<__main__.SmallCactus object at 0x000002957FEA2400>,2000,0,2
+K_UP,220,38,10,<__main__.SmallCactus object at 0x000002957FEA2400>,2000,0,2
+K_UP,210,38,10,<__main__.SmallCactus object at 0x000002957FEA2400>,2000,0,2
+K_UP,200,38,10,<__main__.SmallCactus object at 0x000002957FEA2400>,2000,0,2
+K_UP,190,38,10,<__main__.SmallCactus object at 0x000002957FEA2400>,2000,0,2
+K_UP,180,38,10,<__main__.SmallCactus object at 0x000002957FEA2400>,2000,0,2
+K_UP,170,38,10,<__main__.SmallCactus object at 0x000002957FEA2400>,2000,0,2
+K_UP,160,38,10,<__main__.SmallCactus object at 0x000002957FEA2400>,2000,0,2
+K_UP,150,38,10,<__main__.SmallCactus object at 0x000002957FEA2400>,2000,0,2
+K_UP,140,38,10,<__main__.SmallCactus object at 0x000002957FEA2400>,2000,0,2
+K_UP,130,38,10,<__main__.SmallCactus object at 0x000002957FEA2400>,2000,0,2
+K_UP,190,38,10,<__main__.SmallCactus object at 0x000002957FE96C70>,860,58,<__main__.LargeCactus object at 0x000002957FEA2910>
+K_UP,180,38,10,<__main__.SmallCactus object at 0x000002957FE96C70>,850,58,<__main__.LargeCactus object at 0x000002957FEA2910>
+K_UP,170,38,10,<__main__.SmallCactus object at 0x000002957FE96C70>,840,58,<__main__.LargeCactus object at 0x000002957FEA2910>
+K_UP,160,38,10,<__main__.SmallCactus object at 0x000002957FE96C70>,830,58,<__main__.LargeCactus object at 0x000002957FEA2910>
+K_UP,200,38,10,<__main__.SmallCactus object at 0x000002957FE96C70>,1020,58,<__main__.LargeCactus object at 0x000002957FEA2C70>
+K_UP,190,38,10,<__main__.SmallCactus object at 0x000002957FE96C70>,1010,58,<__main__.LargeCactus object at 0x000002957FEA2C70>
+K_UP,180,38,10,<__main__.SmallCactus object at 0x000002957FE96C70>,1000,58,<__main__.LargeCactus object at 0x000002957FEA2C70>
+K_UP,170,38,10,<__main__.SmallCactus object at 0x000002957FE96C70>,990,58,<__main__.LargeCactus object at 0x000002957FEA2C70>
+K_UP,160,38,10,<__main__.SmallCactus object at 0x000002957FE96C70>,980,58,<__main__.LargeCactus object at 0x000002957FEA2C70>
+K_UP,280,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,270,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,260,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,250,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,240,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,230,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,220,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,210,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,200,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,190,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,180,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,170,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,160,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,150,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,140,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,130,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,120,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,110,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,100,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,90,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,80,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,70,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,60,58,10,<__main__.LargeCactus object at 0x0000028DFAFB3430>,2000,0,2
+K_UP,280,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,740,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,270,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,730,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,260,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,720,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,250,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,710,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,240,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,700,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,230,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,690,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,220,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,680,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,210,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,670,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,200,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,660,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,190,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,650,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,180,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,640,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,170,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,630,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,160,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,620,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,150,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,610,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,140,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,600,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,130,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,590,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,120,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,580,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,110,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,570,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,100,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,560,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,90,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,550,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,80,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,540,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,70,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,530,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,60,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,520,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,50,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,510,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,40,58,10,<__main__.LargeCactus object at 0x0000028DFF636C70>,500,58,<__main__.LargeCactus object at 0x0000028DFF642CA0>
+K_UP,260,58,10,<__main__.LargeCactus object at 0x0000028DFF642CA0>,940,123,<__main__.Bird object at 0x0000028DFF642400>
+K_UP,250,58,10,<__main__.LargeCactus object at 0x0000028DFF642CA0>,930,123,<__main__.Bird object at 0x0000028DFF642400>
+K_UP,240,58,10,<__main__.LargeCactus object at 0x0000028DFF642CA0>,920,123,<__main__.Bird object at 0x0000028DFF642400>
+K_UP,230,58,10,<__main__.LargeCactus object at 0x0000028DFF642CA0>,910,123,<__main__.Bird object at 0x0000028DFF642400>
+K_UP,220,58,10,<__main__.LargeCactus object at 0x0000028DFF642CA0>,900,123,<__main__.Bird object at 0x0000028DFF642400>
+K_UP,210,58,10,<__main__.LargeCactus object at 0x0000028DFF642CA0>,890,123,<__main__.Bird object at 0x0000028DFF642400>
+K_UP,200,58,10,<__main__.LargeCactus object at 0x0000028DFF642CA0>,880,123,<__main__.Bird object at 0x0000028DFF642400>
+K_UP,190,58,10,<__main__.LargeCactus object at 0x0000028DFF642CA0>,870,123,<__main__.Bird object at 0x0000028DFF642400>
+K_UP,180,58,10,<__main__.LargeCactus object at 0x0000028DFF642CA0>,860,123,<__main__.Bird object at 0x0000028DFF642400>
+K_UP,170,58,10,<__main__.LargeCactus object at 0x0000028DFF642CA0>,850,123,<__main__.Bird object at 0x0000028DFF642400>
+K_UP,240,38,10,<__main__.SmallCactus object at 0x0000028DFF642910>,2000,0,2
+K_UP,230,38,10,<__main__.SmallCactus object at 0x0000028DFF642910>,2000,0,2
+K_UP,220,38,10,<__main__.SmallCactus object at 0x0000028DFF642910>,1090,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,210,38,10,<__main__.SmallCactus object at 0x0000028DFF642910>,1080,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,200,38,10,<__main__.SmallCactus object at 0x0000028DFF642910>,1070,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,190,38,10,<__main__.SmallCactus object at 0x0000028DFF642910>,1060,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,180,38,11,<__main__.SmallCactus object at 0x0000028DFF642910>,1050,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,169,38,11,<__main__.SmallCactus object at 0x0000028DFF642910>,1039,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,158,38,11,<__main__.SmallCactus object at 0x0000028DFF642910>,1028,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,147,38,11,<__main__.SmallCactus object at 0x0000028DFF642910>,1017,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,136,38,11,<__main__.SmallCactus object at 0x0000028DFF642910>,1006,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,125,38,11,<__main__.SmallCactus object at 0x0000028DFF642910>,995,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,114,38,11,<__main__.SmallCactus object at 0x0000028DFF642910>,984,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,103,38,11,<__main__.SmallCactus object at 0x0000028DFF642910>,973,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,92,38,11,<__main__.SmallCactus object at 0x0000028DFF642910>,962,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,81,38,11,<__main__.SmallCactus object at 0x0000028DFF642910>,951,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,70,38,11,<__main__.SmallCactus object at 0x0000028DFF642910>,940,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,59,38,11,<__main__.SmallCactus object at 0x0000028DFF642910>,929,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,48,38,11,<__main__.SmallCactus object at 0x0000028DFF642910>,918,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,37,38,11,<__main__.SmallCactus object at 0x0000028DFF642910>,907,38,<__main__.SmallCactus object at 0x0000028DFF6426A0>
+K_UP,247,38,11,<__main__.SmallCactus object at 0x0000028DFF6426A0>,2000,0,2
+K_UP,236,38,11,<__main__.SmallCactus object at 0x0000028DFF6426A0>,2000,0,2
+K_UP,225,38,11,<__main__.SmallCactus object at 0x0000028DFF6426A0>,2000,0,2
+K_UP,214,38,11,<__main__.SmallCactus object at 0x0000028DFF6426A0>,2000,0,2
+K_UP,203,38,11,<__main__.SmallCactus object at 0x0000028DFF6426A0>,2000,0,2
+K_UP,192,38,11,<__main__.SmallCactus object at 0x0000028DFF6426A0>,2000,0,2
+K_UP,181,38,11,<__main__.SmallCactus object at 0x0000028DFF6426A0>,2000,0,2
+K_UP,170,38,11,<__main__.SmallCactus object at 0x0000028DFF6426A0>,2000,0,2
+K_UP,159,38,11,<__main__.SmallCactus object at 0x0000028DFF6426A0>,2000,0,2
+K_UP,148,38,11,<__main__.SmallCactus object at 0x0000028DFF6426A0>,2000,0,2
+K_UP,137,38,11,<__main__.SmallCactus object at 0x0000028DFF6426A0>,2000,0,2
+K_UP,126,38,11,<__main__.SmallCactus object at 0x0000028DFF6426A0>,2000,0,2
+K_UP,115,38,11,<__main__.SmallCactus object at 0x0000028DFF6426A0>,2000,0,2
+K_UP,104,38,11,<__main__.SmallCactus object at 0x0000028DFF6426A0>,2000,0,2
+K_UP,93,38,11,<__main__.SmallCactus object at 0x0000028DFF6426A0>,2000,0,2
+K_UP,308,38,11,<__main__.SmallCactus object at 0x0000028DFF6423A0>,2000,0,2
+K_UP,297,38,11,<__main__.SmallCactus object at 0x0000028DFF6423A0>,2000,0,2
+K_UP,286,38,11,<__main__.SmallCactus object at 0x0000028DFF6423A0>,2000,0,2
+K_UP,275,38,11,<__main__.SmallCactus object at 0x0000028DFF6423A0>,2000,0,2
+K_UP,264,38,11,<__main__.SmallCactus object at 0x0000028DFF6423A0>,2000,0,2
+K_UP,253,38,11,<__main__.SmallCactus object at 0x0000028DFF6423A0>,2000,0,2
+K_UP,242,38,11,<__main__.SmallCactus object at 0x0000028DFF6423A0>,2000,0,2
+K_UP,231,38,11,<__main__.SmallCactus object at 0x0000028DFF6423A0>,2000,0,2
+K_UP,220,38,11,<__main__.SmallCactus object at 0x0000028DFF6423A0>,2000,0,2
+K_UP,209,38,11,<__main__.SmallCactus object at 0x0000028DFF6423A0>,2000,0,2
+K_UP,198,38,11,<__main__.SmallCactus object at 0x0000028DFF6423A0>,2000,0,2
+K_UP,187,38,11,<__main__.SmallCactus object at 0x0000028DFF6423A0>,2000,0,2
+K_UP,176,38,11,<__main__.SmallCactus object at 0x0000028DFF6423A0>,2000,0,2
+K_UP,165,38,11,<__main__.SmallCactus object at 0x0000028DFF6423A0>,2000,0,2
+K_UP,154,38,11,<__main__.SmallCactus object at 0x0000028DFF6423A0>,2000,0,2
+K_UP,253,58,11,<__main__.LargeCactus object at 0x0000028DFF642610>,902,58,<__main__.LargeCactus object at 0x0000028DFF642280>
+K_UP,242,58,11,<__main__.LargeCactus object at 0x0000028DFF642610>,891,58,<__main__.LargeCactus object at 0x0000028DFF642280>
+K_UP,231,58,11,<__main__.LargeCactus object at 0x0000028DFF642610>,880,58,<__main__.LargeCactus object at 0x0000028DFF642280>
+K_UP,220,58,11,<__main__.LargeCactus object at 0x0000028DFF642610>,869,58,<__main__.LargeCactus object at 0x0000028DFF642280>
+K_UP,209,58,11,<__main__.LargeCactus object at 0x0000028DFF642610>,858,58,<__main__.LargeCactus object at 0x0000028DFF642280>
+K_UP,198,58,11,<__main__.LargeCactus object at 0x0000028DFF642610>,847,58,<__main__.LargeCactus object at 0x0000028DFF642280>
+K_UP,187,58,11,<__main__.LargeCactus object at 0x0000028DFF642610>,836,58,<__main__.LargeCactus object at 0x0000028DFF642280>
+K_UP,176,58,11,<__main__.LargeCactus object at 0x0000028DFF642610>,825,58,<__main__.LargeCactus object at 0x0000028DFF642280>
+K_UP,165,58,11,<__main__.LargeCactus object at 0x0000028DFF642610>,814,58,<__main__.LargeCactus object at 0x0000028DFF642280>
+K_UP,154,58,11,<__main__.LargeCactus object at 0x0000028DFF642610>,803,58,<__main__.LargeCactus object at 0x0000028DFF642280>
+K_UP,143,58,11,<__main__.LargeCactus object at 0x0000028DFF642610>,792,58,<__main__.LargeCactus object at 0x0000028DFF642280>
+K_UP,242,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,924,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,231,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,913,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,220,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,902,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,209,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,891,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,198,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,880,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,187,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,869,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,176,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,858,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,165,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,847,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,154,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,836,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,143,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,825,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,132,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,814,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,121,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,803,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,110,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,792,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,99,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,781,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,88,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,770,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,77,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,759,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,66,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,748,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,55,58,11,<__main__.LargeCactus object at 0x0000028DFF642280>,737,38,<__main__.SmallCactus object at 0x0000028DFF642310>
+K_UP,286,38,11,<__main__.SmallCactus object at 0x0000028DFF642310>,781,38,<__main__.SmallCactus object at 0x0000028DFF6421C0>
+K_UP,275,38,11,<__main__.SmallCactus object at 0x0000028DFF642310>,770,38,<__main__.SmallCactus object at 0x0000028DFF6421C0>
+K_UP,264,38,11,<__main__.SmallCactus object at 0x0000028DFF642310>,759,38,<__main__.SmallCactus object at 0x0000028DFF6421C0>
+K_UP,253,38,11,<__main__.SmallCactus object at 0x0000028DFF642310>,748,38,<__main__.SmallCactus object at 0x0000028DFF6421C0>
+K_UP,242,38,11,<__main__.SmallCactus object at 0x0000028DFF642310>,737,38,<__main__.SmallCactus object at 0x0000028DFF6421C0>
+K_UP,231,38,11,<__main__.SmallCactus object at 0x0000028DFF642310>,726,38,<__main__.SmallCactus object at 0x0000028DFF6421C0>
+K_UP,220,38,11,<__main__.SmallCactus object at 0x0000028DFF642310>,715,38,<__main__.SmallCactus object at 0x0000028DFF6421C0>
+K_UP,328,38,12,<__main__.SmallCactus object at 0x0000028DFF6421C0>,2000,0,2
+K_UP,316,38,12,<__main__.SmallCactus object at 0x0000028DFF6421C0>,2000,0,2
+K_UP,304,38,12,<__main__.SmallCactus object at 0x0000028DFF6421C0>,2000,0,2
+K_UP,292,38,12,<__main__.SmallCactus object at 0x0000028DFF6421C0>,2000,0,2
+K_UP,280,38,12,<__main__.SmallCactus object at 0x0000028DFF6421C0>,2000,0,2
+K_UP,268,38,12,<__main__.SmallCactus object at 0x0000028DFF6421C0>,2000,0,2
+K_UP,256,38,12,<__main__.SmallCactus object at 0x0000028DFF6421C0>,2000,0,2
+K_UP,244,38,12,<__main__.SmallCactus object at 0x0000028DFF6421C0>,2000,0,2
+K_UP,232,38,12,<__main__.SmallCactus object at 0x0000028DFF6421C0>,2000,0,2
+K_DOWN,392,83,12,<__main__.Bird object at 0x0000028DFF642A90>,2000,0,2
+K_DOWN,380,83,12,<__main__.Bird object at 0x0000028DFF642A90>,2000,0,2
+K_DOWN,368,83,12,<__main__.Bird object at 0x0000028DFF642A90>,2000,0,2
+K_DOWN,356,83,12,<__main__.Bird object at 0x0000028DFF642A90>,2000,0,2
+K_DOWN,344,83,12,<__main__.Bird object at 0x0000028DFF642A90>,2000,0,2
+K_DOWN,332,83,12,<__main__.Bird object at 0x0000028DFF642A90>,2000,0,2
+K_DOWN,320,83,12,<__main__.Bird object at 0x0000028DFF642A90>,1088,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,308,83,12,<__main__.Bird object at 0x0000028DFF642A90>,1076,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,296,83,12,<__main__.Bird object at 0x0000028DFF642A90>,1064,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,284,83,12,<__main__.Bird object at 0x0000028DFF642A90>,1052,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,272,83,12,<__main__.Bird object at 0x0000028DFF642A90>,1040,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,260,83,12,<__main__.Bird object at 0x0000028DFF642A90>,1028,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,248,83,12,<__main__.Bird object at 0x0000028DFF642A90>,1016,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,236,83,12,<__main__.Bird object at 0x0000028DFF642A90>,1004,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,224,83,12,<__main__.Bird object at 0x0000028DFF642A90>,992,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,212,83,12,<__main__.Bird object at 0x0000028DFF642A90>,980,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,200,83,12,<__main__.Bird object at 0x0000028DFF642A90>,968,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,188,83,12,<__main__.Bird object at 0x0000028DFF642A90>,956,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,176,83,12,<__main__.Bird object at 0x0000028DFF642A90>,944,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,164,83,12,<__main__.Bird object at 0x0000028DFF642A90>,932,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,152,83,12,<__main__.Bird object at 0x0000028DFF642A90>,920,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,140,83,12,<__main__.Bird object at 0x0000028DFF642A90>,908,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,128,83,12,<__main__.Bird object at 0x0000028DFF642A90>,896,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,116,83,12,<__main__.Bird object at 0x0000028DFF642A90>,884,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,104,83,12,<__main__.Bird object at 0x0000028DFF642A90>,872,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,92,83,12,<__main__.Bird object at 0x0000028DFF642A90>,860,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,80,83,12,<__main__.Bird object at 0x0000028DFF642A90>,848,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,68,83,12,<__main__.Bird object at 0x0000028DFF642A90>,836,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,56,83,12,<__main__.Bird object at 0x0000028DFF642A90>,824,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,44,83,12,<__main__.Bird object at 0x0000028DFF642A90>,812,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,32,83,12,<__main__.Bird object at 0x0000028DFF642A90>,800,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,20,83,12,<__main__.Bird object at 0x0000028DFF642A90>,788,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,8,83,12,<__main__.Bird object at 0x0000028DFF642A90>,776,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,-4,83,12,<__main__.Bird object at 0x0000028DFF642A90>,764,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,-16,83,12,<__main__.Bird object at 0x0000028DFF642A90>,752,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,-28,83,12,<__main__.Bird object at 0x0000028DFF642A90>,740,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,-40,83,12,<__main__.Bird object at 0x0000028DFF642A90>,728,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,-52,83,12,<__main__.Bird object at 0x0000028DFF642A90>,716,38,<__main__.SmallCactus object at 0x0000028DFF642D30>
+K_DOWN,704,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,2000,0,2
+K_UP,308,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,980,38,<__main__.SmallCactus object at 0x0000028DFF642E50>
+K_UP,296,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,968,38,<__main__.SmallCactus object at 0x0000028DFF642E50>
+K_UP,284,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,956,38,<__main__.SmallCactus object at 0x0000028DFF642E50>
+K_UP,272,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,944,38,<__main__.SmallCactus object at 0x0000028DFF642E50>
+K_UP,260,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,932,38,<__main__.SmallCactus object at 0x0000028DFF642E50>
+K_UP,248,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,920,38,<__main__.SmallCactus object at 0x0000028DFF642E50>
+K_UP,236,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,908,38,<__main__.SmallCactus object at 0x0000028DFF642E50>
+K_UP,224,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,896,38,<__main__.SmallCactus object at 0x0000028DFF642E50>
+K_UP,212,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,884,38,<__main__.SmallCactus object at 0x0000028DFF642E50>
+K_UP,200,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,872,38,<__main__.SmallCactus object at 0x0000028DFF642E50>
+K_UP,188,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,860,38,<__main__.SmallCactus object at 0x0000028DFF642E50>
+K_UP,176,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,848,38,<__main__.SmallCactus object at 0x0000028DFF642E50>
+K_UP,164,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,836,38,<__main__.SmallCactus object at 0x0000028DFF642E50>
+K_UP,152,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,824,38,<__main__.SmallCactus object at 0x0000028DFF642E50>
+K_UP,140,38,12,<__main__.SmallCactus object at 0x0000028DFF642D30>,812,38,<__main__.SmallCactus object at 0x0000028DFF642E50>
+K_UP,248,38,12,<__main__.SmallCactus object at 0x0000028DFF642E50>,872,58,<__main__.LargeCactus object at 0x0000028DFF6424C0>
+K_UP,236,38,12,<__main__.SmallCactus object at 0x0000028DFF642E50>,860,58,<__main__.LargeCactus object at 0x0000028DFF6424C0>
+K_UP,224,38,12,<__main__.SmallCactus object at 0x0000028DFF642E50>,848,58,<__main__.LargeCactus object at 0x0000028DFF6424C0>
+K_UP,212,38,12,<__main__.SmallCactus object at 0x0000028DFF642E50>,836,58,<__main__.LargeCactus object at 0x0000028DFF6424C0>
+K_UP,200,38,12,<__main__.SmallCactus object at 0x0000028DFF642E50>,824,58,<__main__.LargeCactus object at 0x0000028DFF6424C0>
+K_UP,188,38,12,<__main__.SmallCactus object at 0x0000028DFF642E50>,812,58,<__main__.LargeCactus object at 0x0000028DFF6424C0>
+K_UP,176,38,12,<__main__.SmallCactus object at 0x0000028DFF642E50>,800,58,<__main__.LargeCactus object at 0x0000028DFF6424C0>
+K_UP,164,38,12,<__main__.SmallCactus object at 0x0000028DFF642E50>,788,58,<__main__.LargeCactus object at 0x0000028DFF6424C0>
+K_UP,152,38,12,<__main__.SmallCactus object at 0x0000028DFF642E50>,776,58,<__main__.LargeCactus object at 0x0000028DFF6424C0>
+K_UP,140,38,12,<__main__.SmallCactus object at 0x0000028DFF642E50>,764,58,<__main__.LargeCactus object at 0x0000028DFF6424C0>
+K_UP,212,58,12,<__main__.LargeCactus object at 0x0000028DFF6424C0>,2000,0,2
+K_UP,200,58,12,<__main__.LargeCactus object at 0x0000028DFF6424C0>,2000,0,2
+K_UP,188,58,12,<__main__.LargeCactus object at 0x0000028DFF6424C0>,2000,0,2
+K_UP,176,58,12,<__main__.LargeCactus object at 0x0000028DFF6424C0>,2000,0,2
+K_UP,164,58,12,<__main__.LargeCactus object at 0x0000028DFF6424C0>,2000,0,2

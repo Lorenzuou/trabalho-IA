@@ -1,3 +1,4 @@
+import pandas as pd
 import pygame
 import os
 import random
@@ -8,8 +9,8 @@ from neural import DinoClassifier
 pygame.init()
 
 # Valid values: HUMAN_MODE or AI_MODE
-GAME_MODE = "HUMAN_MODE"
-RENDER_GAME = True
+GAME_MODE = "AI_MODE"
+RENDER_GAME = False
 
 # Global Constants
 SCREEN_HEIGHT = 600
@@ -369,7 +370,6 @@ def playGame():
                     #write logs to file, append
                     with open('logs.csv', 'a') as f:
                         for log in logs:
-                            print(log)
                             #turn tuple into string, separated by comma
                             log = ','.join(str(x) for x in log)
                             f.write(log)
@@ -458,26 +458,59 @@ def selection(population, scores, k=5):
         new_population.append(population[i])
     return new_population
 
+def enumerateObType(obType):
+        if "SmallCactus" in obType:
+            return 10
+        elif "LargeCactus" in obType:
+            return 200
+        elif "Bird" in obType:
+            return 3000
+        else:
+            return 10
 
+def enumerateY(y):
+    if y == "K_UP":
+        return 1
+    else:
+        return 0
 
 def dino_train(n_rounds, n_players):
     global aiPlayer
     global top_score
     global dinos
 
+
+    #load player data from csv as a numpy array
+    player_data = pd.read_csv('logs.csv', header=None)
+    # y is the first column, x is the rest
+    y = player_data.iloc[:,0]
+    X = player_data.iloc[:,1:]
+    #convert colum 3 and 6 using enumerateObType
+    X[4] = X[4].apply(enumerateObType)
+    X[7] = X[7].apply(enumerateObType)
+
+    #convert colum 0 using enumerateY
+    y = y.apply(enumerateY)
+
+
+    
+
+
+    
     if(len(dinos) == 0):
-        # primeiro round, vmaos treinar todos os dinossauros com valores de pesos aleatorios
-        # SUBSTITUIR ISSO POR DADOS DE ALGUEM JOGANDO, daí treinar primeiro com eles para inicializar as coisas
+        # primeiro round, vmaos treinar todos os dinossauros com valores de jogares reais
+        # epochs: numero de vezes que o modelo vai ver o dataset
+        # lr: learning rate, quanto maior mais rapido o modelo aprende, mas pode nao convergir
         for p in range(n_players):
             aiPlayer = DinoClassifier()
+            aiPlayer.fit(X,y,epochs=10,lr=0.01)
             dinos.append(aiPlayer)          
             res, value = manyPlaysResults(n_rounds)
             best_player = aiPlayer       
             if value > top_score:
                 top_score = value
                 best_player = aiPlayer
-
-        # treinar todos os dinossauros com os pesos do melhor jogador
+        print("Melhor jogador: ", best_player)
         for dino in dinos: 
             dino.fit(best_player.inputs,best_player.outputs,epochs=10,lr=0.01)
 
