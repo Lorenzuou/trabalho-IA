@@ -52,17 +52,16 @@ parameters = {
 
 class Particle:
     # PSO parameters
-    swarm_size = 20
-    max_iterations = 100
+  
     c1 = 2.05  # Cognitive component weight
     c2 = 2.05  # Social component weight
-    w = 0.5  # Inertia weight
+    w = 0.7  # Inertia weight
     # max_velocity = 2
 
     def randomize(self, position):
         # Soma valores pequenos entre 1 e 10 para cada parâmetro da position, para evitar que a velocidade seja sempre 0
         for i in range(PARAMETERS_QTD):
-            position[i] = position[i] + position[i] * random.uniform(-1,1) * 0.35
+            position[i] = position[i] + position[i] * random.uniform(-1,1) * 0.3
         return position
     def __init__(self,seed= None, state = None ):
         if seed:
